@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Django Project{% endblock %}</title>
+</head>
+<body>
+    <h1>Mi Proyecto Django</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'add_author' %}">Agregar Autor</a></li>
+            <li><a href="{% url 'add_book' %}">Agregar Libro</a></li>
+            <li><a href="{% url 'add_publisher' %}">Agregar Editor</a></li>
+        </ul>
+    </nav>
+    {% block content %}{% endblock %}
+</body>
+</html>

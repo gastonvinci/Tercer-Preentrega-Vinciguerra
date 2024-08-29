@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de Libros</title>
+</head>
+<body>
+    <h1>Listado de Libros</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Fecha de Publicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author.name }}</td> <!-- Muestra el nombre del autor -->
+                    <td>{{ book.publication_date }}</td>
+                </tr>
+            {% empty %}
+                <tr>
+                    <td colspan="3">No hay libros disponibles.</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'add_book' %}">Agregar Libro</a>
+    <a href="{% url 'home' %}">Volver a Inicio</a>  <!-- Enlace para volver a inicio -->
+</body>
+</html>

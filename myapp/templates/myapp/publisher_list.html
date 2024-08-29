@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Publisher List</title>
+    </head>
+    <body>
+        <h1>Publishers</h1>
+        <ul>
+            {% for publisher in publishers %}
+                <li>{{ publisher.name }} <!-- Ajusta según tu modelo --></li>
+            {% empty %}
+                <li>No publishers found.</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'home' %}">Back to Home</a>
+    </body>
+    </html>
